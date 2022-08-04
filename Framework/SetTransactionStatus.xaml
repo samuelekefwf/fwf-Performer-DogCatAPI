@@ -22,7 +22,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1051,1446</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1196,1446</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SetTransactionStatus_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="52">
@@ -230,11 +230,11 @@
                   <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;emailSubject&quot;).ToString" />
                 </InArgument>
                 <InArgument x:TypeArguments="x:String" x:Key="in_attachmentPath">
-                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Path.Combine(in_Config(&quot;pathToDownloadedImage&quot;).ToString, in_TransactionItem.SpecificContent(&quot;Animal&quot;).ToString + &quot;Images&quot;,in_TransactionItem.SpecificContent(&quot;Animal&quot;).ToString + DateTime.Now.ToString(&quot;dd-MM-yyyy&quot;)) + &quot;.jpg&quot;" />
+                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Path.Combine(in_Config(&quot;pathToDownloadedImage&quot;).ToString, in_TransactionItem.SpecificContent(&quot;Animal&quot;).ToString + &quot; images&quot;,in_TransactionItem.SpecificContent(&quot;Animal&quot;).ToString +&quot;-&quot;+ DateTime.Now.ToString(&quot;dd-MM-yyyy&quot;)) + &quot;.jpg&quot;" />
                 </InArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
-            <ui:DeleteFileX DisplayName="Delete File With Animal Picture" sap:VirtualizedContainerService.HintSize="516,79" sap2010:WorkflowViewState.IdRef="DeleteFileX_1" Path="[Path.Combine(in_Config(&quot;pathToDownloadedImage&quot;).ToString, in_TransactionItem.SpecificContent(&quot;Animal&quot;).ToString + &quot;Images&quot;,in_TransactionItem.SpecificContent(&quot;Animal&quot;).ToString) + &quot;.jpg&quot;]" />
+            <ui:DeleteFileX DisplayName="Delete File With Animal Picture" sap:VirtualizedContainerService.HintSize="516,79" sap2010:WorkflowViewState.IdRef="DeleteFileX_1" Path="[Path.Combine(in_Config(&quot;pathToDownloadedImage&quot;).ToString, in_TransactionItem.SpecificContent(&quot;Animal&quot;).ToString + &quot; images&quot;,in_TransactionItem.SpecificContent(&quot;Animal&quot;).ToString +&quot;-&quot; + DateTime.Now.ToString(&quot;dd-MM-yyyy&quot;)) + &quot;.jpg&quot;]" />
           </Sequence>
           <FlowStep.Next>
             <FlowStep x:Name="__ReferenceID0">
@@ -245,7 +245,7 @@
                   <av:PointCollection x:Key="ConnectorLocation">340,795.5 340,867</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke UpdateOutPutReportData workflow" sap:VirtualizedContainerService.HintSize="341,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="ServiceLayer\UpdateOutPutReportData.xaml">
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke UpdateOutPutReportData workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="ServiceLayer\UpdateOutPutReportData.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_outputReportData">[in_dt_outputReportData]</InArgument>
                   <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_transactionItem">[in_TransactionItem]</InArgument>

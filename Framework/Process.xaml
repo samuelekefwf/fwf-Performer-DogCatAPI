@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1051,749</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1196,819</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="50">
@@ -75,8 +75,8 @@
       <AssemblyReference>NPOI</AssemblyReference>
       <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>System.Data.Entity</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="391,684" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -99,13 +99,13 @@
           <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;CatAPI_URL&quot;).ToString" />
         </InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_catAPIDownloadedImagePath">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Path.Combine(in_Config(&quot;pathToDownloadedImage&quot;).ToString,&quot;Cat Images&quot;,&quot;Cat-&quot; + DateTime.Now.ToString(&quot;dd-MM-yyyy&quot;)) + &quot;.jpg&quot;" />
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Path.Combine(in_Config(&quot;pathToDownloadedImage&quot;).ToString,&quot;cat images&quot;,&quot;cat-&quot; + DateTime.Now.ToString(&quot;dd-MM-yyyy&quot;)) + &quot;.jpg&quot;" />
         </InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_Dog_API_URL">
           <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;DogAPI_URL&quot;).ToString" />
         </InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_DogAPIDownloadedImagePath">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Path.Combine(in_Config(&quot;pathToDownloadedImage&quot;).ToString,&quot;Dog Images&quot;,&quot;Dog-&quot; + DateTime.Now.ToString(&quot;dd-MM-yyyy&quot;)) + &quot;.jpg&quot;" />
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Path.Combine(in_Config(&quot;pathToDownloadedImage&quot;).ToString,&quot;dog images&quot;,&quot;dog-&quot; + DateTime.Now.ToString(&quot;dd-MM-yyyy&quot;)) + &quot;.jpg&quot;" />
         </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
