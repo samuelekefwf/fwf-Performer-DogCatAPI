@@ -4,6 +4,7 @@
   "main": "Main.xaml",
   "dependencies": {
     "UiPath.Excel.Activities": "[2.12.3]",
+    "UiPath.Mail.Activities": "[1.15.2]",
     "UiPath.System.Activities": "[22.4.4]",
     "UiPath.Testing.Activities": "[22.4.3]",
     "UiPath.UIAutomation.Activities": "[22.4.7]",
@@ -89,6 +90,18 @@
         "testCaseId": "92f600c6-9098-411d-b64a-45c52c3dfd0c",
         "testCaseType": "TestCase",
         "fileName": "Tests\\UnitTest_ReadData.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "b9e37b83-2099-43a2-bcca-c3fd6cd6ccd8",
+        "testCaseType": "TestCase",
+        "fileName": "Tests\\UnitTest_Cat_API_Call.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "23ad79a1-5819-4b87-ab36-a5846de3014f",
+        "testCaseType": "TestCase",
+        "fileName": "Tests\\UnitTest_Dog_API_Call.xaml"
       }
     ],
     "modernBehavior": false

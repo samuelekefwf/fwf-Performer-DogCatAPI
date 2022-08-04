@@ -1,12 +1,28 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="VerifyAnimal" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="VerifyAnimal" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_transactionItem" Type="InArgument(ui:QueueItem)" />
     <x:Property Name="in_animal" Type="InArgument(x:String)" />
+    <x:Property Name="in_Cat_API_URL" Type="InArgument(x:String)" />
+    <x:Property Name="in_catAPIDownloadedImagePath" Type="InArgument(x:String)" />
+    <x:Property Name="in_Dog_API_URL" Type="InArgument(x:String)" />
+    <x:Property Name="in_DogAPIDownloadedImagePath" Type="InArgument(x:String)" />
   </x:Members>
+  <this:VerifyAnimal.in_Cat_API_URL>
+    <InArgument x:TypeArguments="x:String" />
+  </this:VerifyAnimal.in_Cat_API_URL>
+  <this:VerifyAnimal.in_catAPIDownloadedImagePath>
+    <InArgument x:TypeArguments="x:String" />
+  </this:VerifyAnimal.in_catAPIDownloadedImagePath>
+  <this:VerifyAnimal.in_Dog_API_URL>
+    <InArgument x:TypeArguments="x:String" />
+  </this:VerifyAnimal.in_Dog_API_URL>
+  <this:VerifyAnimal.in_DogAPIDownloadedImagePath>
+    <InArgument x:TypeArguments="x:String" />
+  </this:VerifyAnimal.in_DogAPIDownloadedImagePath>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1342,819</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1051,612</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>VerifyAnimal_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -63,10 +79,10 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>NPOI</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="VerifyAnimal" sap:VirtualizedContainerService.HintSize="755,493" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -80,14 +96,20 @@
       <If.Then>
         <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Cat_API_Call workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="ServiceLayer\Cat_API_Call.xaml">
           <ui:InvokeWorkflowFile.Arguments>
-            <scg:Dictionary x:TypeArguments="x:String, Argument" />
+            <InArgument x:TypeArguments="x:String" x:Key="in_Cat_API_URL">
+              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Cat_API_URL" />
+            </InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="in_catAPIDownloadedImagePath">
+              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_catAPIDownloadedImagePath" />
+            </InArgument>
           </ui:InvokeWorkflowFile.Arguments>
         </ui:InvokeWorkflowFile>
       </If.Then>
       <If.Else>
         <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Dog_API_Call workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="ServiceLayer\Dog_API_Call.xaml">
           <ui:InvokeWorkflowFile.Arguments>
-            <scg:Dictionary x:TypeArguments="x:String, Argument" />
+            <InArgument x:TypeArguments="x:String" x:Key="in_Dog_API_URL">[in_Dog_API_URL]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="in_dogAPIDownloadedImagePath">[in_DogAPIDownloadedImagePath]</InArgument>
           </ui:InvokeWorkflowFile.Arguments>
         </ui:InvokeWorkflowFile>
       </If.Else>
