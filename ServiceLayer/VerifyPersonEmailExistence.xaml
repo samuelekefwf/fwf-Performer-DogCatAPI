@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1051,819</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1129,637</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetExistingPersonsEmail_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -71,7 +71,6 @@
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
       <AssemblyReference>System.Data.Entity</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="GetExistingPersonsEmail" sap:VirtualizedContainerService.HintSize="549,572" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -81,12 +80,12 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message - GetExistingPersonsEmail" sap:VirtualizedContainerService.HintSize="507,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;GetExistingPersonsEmail start...&quot;]" />
-    <If Condition="[in_dt_mappedEmployeeData.AsEnumerable.where(function(mail) mail(&quot;Nume Prenume&quot;).ToString.Trim.ToLower = in_transactionItem.SpecificContent(&quot;Name&quot;).ToString.Trim.ToLower).Count = 0]" sap:VirtualizedContainerService.HintSize="507,218" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[in_dt_mappedEmployeeData.AsEnumerable.where(function(mail) mail(&quot;Nume Prenume&quot;).ToString.Trim.ToLower = in_transactionItem.SpecificContent(&quot;Name&quot;).ToString.Trim.ToLower).Count = 0]" DisplayName="If email exists" sap:VirtualizedContainerService.HintSize="507,218" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
         <Throw DisplayName="Throw BRE when Person Not Found" Exception="[new BusinessRuleException(&quot;Person Not Found&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
       </If.Then>
       <If.Else>
-        <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+        <Assign DisplayName="Assign - Mail Address" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_1">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[out_emailAdress]</OutArgument>
           </Assign.To>
@@ -96,6 +95,6 @@
         </Assign>
       </If.Else>
     </If>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="507,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;log&quot;]" />
+    <ui:LogMessage DisplayName="Log Message - finish " sap:VirtualizedContainerService.HintSize="507,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Finished verifying person email&quot;]" />
   </Sequence>
 </Activity>

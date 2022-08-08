@@ -3,6 +3,7 @@
     <x:Property Name="in_mailAddress" Type="InArgument(x:String)" />
     <x:Property Name="in_subject" Type="InArgument(x:String)" />
     <x:Property Name="in_attachmentPath" Type="InArgument(x:String)" />
+    <x:Property Name="in_mailBody" Type="InArgument(x:String)" />
   </x:Members>
   <this:Email_SendMailToEveryPersoFromQueue.in_mailAddress>
     <InArgument x:TypeArguments="x:String" />
@@ -10,10 +11,13 @@
   <this:Email_SendMailToEveryPersoFromQueue.in_subject>
     <InArgument x:TypeArguments="x:String" />
   </this:Email_SendMailToEveryPersoFromQueue.in_subject>
+  <this:Email_SendMailToEveryPersoFromQueue.in_mailBody>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Email_SendMailToEveryPersoFromQueue.in_mailBody>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1051,612</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1129,612</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Email_SendMailToEveryPersoFromQueue_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -89,13 +93,11 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Email_SendMailToEveryPersoFromQueue start...&quot;]" />
-    <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Body="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" Importance="Normal" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" Subject="[in_subject]" To="[in_mailAddress]">
+    <ui:LogMessage DisplayName="Log Message - Email_SendMailToEveryPersoFromQueue" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Email_SendMailToEveryPersoFromQueue start...&quot;]" />
+    <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="[in_mailBody]" DisplayName="Send Outlook Mail Message - Animal Picture" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" Importance="Normal" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" Subject="[in_subject]" To="[in_mailAddress]">
       <ui:SendOutlookMail.Files>
         <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
-          <InArgument x:TypeArguments="x:String">
-            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_attachmentPath" />
-          </InArgument>
+          <InArgument x:TypeArguments="x:String">[in_attachmentPath]</InArgument>
         </scg:List>
       </ui:SendOutlookMail.Files>
     </ui:SendOutlookMail>

@@ -44,49 +44,6 @@
     "fileInfoCollection": [
       {
         "editingStatus": "InProgress",
-        "testCaseId": "e4bafb4a-e779-4614-b9c2-d9d9614bc7c0",
-        "dataVariationFilePath": ".variations\\Tests_Tests.json",
-        "testCaseType": "TestCase",
-        "fileName": "Tests\\GeneralTestCase.xaml"
-      },
-      {
-        "editingStatus": "InProgress",
-        "testCaseId": "7ae71582-e2b2-48dd-9a87-b2f90d890d22",
-        "testCaseType": "TestCase",
-        "fileName": "Tests\\GetTransactionDataTestCase.xaml"
-      },
-      {
-        "editingStatus": "InProgress",
-        "testCaseId": "d6c12078-ac86-4a1d-b0c1-ef184bdc234f",
-        "testCaseType": "TestCase",
-        "fileName": "Tests\\InitAllApplicationsTestCase.xaml"
-      },
-      {
-        "editingStatus": "InProgress",
-        "testCaseId": "53310bd8-0c6c-4c7c-a457-3c915af35bf1",
-        "testCaseType": "TestCase",
-        "fileName": "Tests\\InitAllSettingsTestCase.xaml"
-      },
-      {
-        "editingStatus": "InProgress",
-        "testCaseId": "37e223d6-eead-4ee8-8f3c-d909cc1e72af",
-        "testCaseType": "TestCase",
-        "fileName": "Tests\\MainTestCase.xaml"
-      },
-      {
-        "editingStatus": "InProgress",
-        "testCaseId": "05d0241d-1257-48bb-a8ee-158187af8fa8",
-        "testCaseType": "TestCase",
-        "fileName": "Tests\\ProcessTestCase.xaml"
-      },
-      {
-        "editingStatus": "InProgress",
-        "testCaseId": "e4ef5ca4-e13d-4b58-b63c-f81576eeb873",
-        "testCaseType": "TestCase",
-        "fileName": "Tests\\WorkflowTestCaseTemplate.xaml"
-      },
-      {
-        "editingStatus": "InProgress",
         "testCaseId": "92f600c6-9098-411d-b64a-45c52c3dfd0c",
         "testCaseType": "TestCase",
         "fileName": "Tests\\UnitTest_ReadData.xaml"
@@ -102,6 +59,24 @@
         "testCaseId": "23ad79a1-5819-4b87-ab36-a5846de3014f",
         "testCaseType": "TestCase",
         "fileName": "Tests\\UnitTest_Dog_API_Call.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "a82b4e60-8a9e-487c-abbc-540cf3ac6ce3",
+        "testCaseType": "TestCase",
+        "fileName": "Tests\\UnitTest_SendMailToEveryPersonFromQueue.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "23cc2722-9caa-4a67-a16e-f3afe673907d",
+        "testCaseType": "TestCase",
+        "fileName": "Tests\\UnitTest_SendOutputReportToManager.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "4f12b474-9c3a-4685-9e00-0a99904c746f",
+        "testCaseType": "TestCase",
+        "fileName": "Tests\\UnitTest_GetExistingPersonEmail.xaml"
       }
     ],
     "modernBehavior": false
